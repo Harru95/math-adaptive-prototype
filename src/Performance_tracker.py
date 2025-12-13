@@ -1,5 +1,5 @@
 def Performance_Tracker(attempts,correct,time_taken):
-    attempts.append((correct,time_taken))
+    attempts.append((correct,time_taken))  #stores in format like (True,4.3) that is if the correct or not and time taken
 
 def progress_summarize(name,total_q,attempts,path,final_lvl):
     t_correct=sum(1 for c,_ in attempts if c)
