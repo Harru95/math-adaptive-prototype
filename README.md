@@ -1,116 +1,128 @@
-Math Adaptive Learning Prototype
+# Math Adaptive Learning Prototype
 
-An AI-powered adaptive learning prototype designed to personalize math practice for children (ages 5–10).
-The system dynamically adjusts difficulty levels based on user performance using a rule-based adaptive engine.
+An AI-powered adaptive learning system designed to personalize math practice for children (ages 5–10).  
+The system dynamically adjusts difficulty levels using a simple rule-based engine.
 
-🚀 Features
+---
 
-Three difficulty levels: Easy, Medium, Hard
+## 🚀 Features
+- Three difficulty levels: Easy, Medium, Hard
+- Dynamic math question generation
+- Performance tracking (correctness + response time)
+- Automatic difficulty adjustment
+- End-of-session performance summary
+- Streamlit user interface
+- Clean modular Python code
 
-Dynamic math puzzle generation
+---
 
-Performance tracking:
-
-Correct/Incorrect
-
-Response time
-
-Real-time difficulty adjustment
-
-End-of-session summary and recommended next difficulty
-
-Clean modular code
-
-Streamlit UI (simple, interactive)
-
-🧠 Adaptive Logic (Rule-Based)
+## 🧠 Adaptive Logic (Rule-Based)
 
 Difficulty increases if:
-
-Accuracy in last 3 questions = 100%
-
-AND average response time < 5 seconds
+- Last 3 questions are 100% correct
+- AND average response time is under 5 seconds
 
 Difficulty decreases if:
+- Accuracy is under 50%
+- OR average response time is above 8 seconds
 
-Accuracy < 50%
+Otherwise: difficulty stays the same.
 
-OR response time > 8 seconds
+---
 
-Otherwise difficulty stays the same.
+## 📁 Project Structure
 
-🗂 Folder Structure
+\`\`\`
 math-adaptive-prototype/
 │
 ├─ README.md
 ├─ requirements.txt
 │
 ├─ src/
-│   ├─ main.py
-│   ├─ puzzle_generator.py
-│   ├─ adaptive_engine.py
-│   └─ tracker.py
+│   ├─ main.py               # Streamlit app
+│   ├─ puzzle_generator.py   # Math question generator
+│   ├─ adaptive_engine.py    # Difficulty adjustment engine
+│   └─ Performance_Tracker.py            # Performance tracker + summary
+\`\`\`
 
-📄 File Descriptions
-main.py
+---
 
-Front-end logic using Streamlit:
+## 📄 File Descriptions
 
-User name input
+### main.py
+- Handles Streamlit UI  
+- Takes user name and question count  
+- Runs the question loop  
+- Tracks correctness  
+- Adjusts difficulty  
+- Produces final report  
 
-Number of questions input
+### puzzle_generator.py
+- Generates math puzzles based on difficulty  
+- Easy → small integer addition/subtraction  
+- Medium → larger numbers  
+- Hard → multiplication/division  
 
-Puzzle loop
+### adaptive_engine.py
+- Implements rule-based difficulty adjustment  
+- Uses last 3 answers (correctness + response time)
 
-Difficulty transitions
+### Performance_Tracker.py
+- Tracks correctness & response time  
+- Computes accuracy + average time  
+- Stores difficulty path  
+- Produces session summary  
 
-Summary output
+---
 
-puzzle_generator.py
+## ▶️ Running the App
 
-Creates arithmetic problems based on difficulty level.
-
-adaptive_engine.py
-
-Implements rule-based difficulty transitions using:
-
-Past correctness
-
-Time taken
-
-tracker.py
-
-Stores user performance & generates the final session report.
-
-▶️ Running the App
-Install dependencies:
+Install dependencies:  
+\`\`\`
 pip install -r requirements.txt
+\`\`\`
 
-Run Streamlit app:
+Run the Streamlit app:  
+\`\`\`
 cd src
 streamlit run main.py
+\`\`\`
 
-📊 Example Flow
+---
 
-User enters name
+## 📊 Example Session Summary
 
-Chooses total number of questions
-
-Receives a math question
-
-System logs performance
-
-Adaptive engine adjusts difficulty
-
-Summary is displayed after final question
-
-🧪 Sample Summary Output
+\`\`\`
 {
-  "name": "Aditya",
+  "name": "Harsh",
   "total_questions": 10,
-  "correct": 8,
-  "accuracy": 80.0,
-  "avg_time": 4.3,
-  "path": ["Medium", "Medium", "Hard", "Hard", "Hard"],
-  "next_level": "Hard"
+  "correct": 7,
+  "accuracy": 70.0,
+  "avg_time": 5.31,
+  "path": ["Medium", "Medium", "Hard", "Medium", "Medium"],
+  "next_level": "Medium"
 }
+\`\`\`
+
+---
+
+## 🎯 Learning Outcomes
+- Adaptive learning logic  
+- Real-time difficulty scaling  
+- Rule-based personalization  
+- Modular architecture  
+- Streamlit app workflow  
+
+---
+## 🔮 Future Enhancements
+- ML-based difficulty prediction (Logistic Regression / Decision Tree)
+- Reinforcement Learning for adaptive difficulty adjustment
+- Progress graphs and visual analytics
+- More question types (word problems, geometry, multiplication, etc.)
+- Long-term student profile + personalized learning trajectories
+
+---
+
+## 🙌 Author
+Harsh Soni  
+GitHub: https://github.com/Harru95  
