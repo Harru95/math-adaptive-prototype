@@ -1,4 +1,5 @@
 import random
+#Three levels of difficulty Easy,Medium and Hard
 def puzzle_generator(level):
     if level=="Easy":
         a=random.randint(0,10)
