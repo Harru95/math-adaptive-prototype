@@ -3,7 +3,7 @@ import time
 from puzzle_generator import puzzle_generator
 from adaptive_engine import adaptive_engine
 from Performance_tracker import Performance_Tracker, progress_summarize
-st.title("Adaptive Learnig Prototype")
+st.title("Adaptive Learning Prototype")
 #Initializing
 if "name" not in st.session_state:
     st.session_state.name=""
